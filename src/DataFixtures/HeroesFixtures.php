@@ -23,7 +23,7 @@ class HeroesFixtures extends Fixture
                  ->setSlug($slugger->slugify($hero->getName()))
                  ->setDescription('<p>' . join('</p><p>', $faker->paragraphs(3)) . '</p>')
                  ->setPicture('https://api.adorable.io/avatars/285/'.$hero->getSlug().'.png')
-                 ->setPowers($faker->randomElements($powers));
+                 ->setPowers($faker->randomElements($powers, mt_rand(1, 4)));
             $manager->persist($hero);
         }
 
